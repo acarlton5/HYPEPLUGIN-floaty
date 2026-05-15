@@ -43,25 +43,25 @@ Floaty exposes commands that you can bind to keyboard shortcuts or use in script
 
 ```bash
 # Float current clipboard image
-dms ipc call floaty floatFromClipboard
+hype ipc call floaty floatFromClipboard
 
 # Open file selector to float
-dms ipc call floaty selectFileAndFloat
+hype ipc call floaty selectFileAndFloat
 
 # Close all active floating windows
-dms ipc call floaty closeAllWindows
+hype ipc call floaty closeAllWindows
 
 # Toggle minimize/expand for all windows
-dms ipc call floaty toggleMinimizeAll
+hype ipc call floaty toggleMinimizeAll
 
 # Explicitly minimize all windows
-dms ipc call floaty minimizeAll
+hype ipc call floaty minimizeAll
 
 # Explicitly expand all windows
-dms ipc call floaty expandAll
+hype ipc call floaty expandAll
 
 # Float image from a specific URL or Path
-dms ipc call floaty floatFromUrl "file:///path/to/image.png"
+hype ipc call floaty floatFromUrl "file:///path/to/image.png"
 ```
 
 ### Example: Screenshot to Floaty
@@ -75,7 +75,7 @@ Add this to your `config.kdl`:
 ```kdl
 bindings {
     Print { 
-        spawn "sh" "-c" "dms screenshot region --no-file --no-notify && dms ipc call floaty floatFromClipboard"; 
+        spawn "sh" "-c" "hype screenshot region --no-file --no-notify && hype ipc call floaty floatFromClipboard"; 
     }
 }
 ```
@@ -89,13 +89,13 @@ You can also bind the command directly in DMS Settings:
 Command to use:
 
 ```bash
-dms screenshot region --no-file --no-notify && dms ipc call floaty floatFromClipboard
+hype screenshot region --no-file --no-notify && hype ipc call floaty floatFromClipboard
 ```
 
 Or for full screen:
 
 ```bash
-dms screenshot full --no-file --no-notify && dms ipc call floaty floatFromClipboard
+hype screenshot full --no-file --no-notify && hype ipc call floaty floatFromClipboard
 ```
 
 ## Notes
@@ -119,7 +119,7 @@ dms screenshot full --no-file --no-notify && dms ipc call floaty floatFromClipbo
 2. Reload DMS or use the IPC command:
 
    ```bash
-   dms ipc plugins reload floaty
+   hype ipc plugins reload floaty
    ```
 
 ## Credits
